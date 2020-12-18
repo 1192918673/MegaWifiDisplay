@@ -1,0 +1,52 @@
+cc_library_shared {
+    name: "libjni_wfd",
+
+    arch: {
+        arm64: {
+            srcs: [
+                "com_mega_wifidisplay_WifiDisplaySource.cpp",
+                "com_mega_wifidisplay_WifiDisplaySink.cpp",
+            ],
+        },
+
+        arm: {
+            srcs: [
+                "com_mega_wifidisplay_WifiDisplaySource.cpp",
+                "com_mega_wifidisplay_WifiDisplaySink.cpp",
+            ],
+        },
+    },
+
+    local_include_dirs: ["include"],
+
+    include_dirs: [
+        "frameworks/av/include/media/stagefright/foundation",
+        "frameworks/av/media/libstagefright/wifi-display",
+    ],
+
+    shared_libs: [
+        "libbinder",
+        "libgui",
+        "libmedia",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libstagefright_wfd",
+        "libutils",
+        "liblog",
+        "libcutils",
+        "libandroid_runtime",
+        "libnativehelper",
+    ],
+
+    cppflags：[
+        "-DART_STACK_OVERFLOW_GAP_arm=8912",
+        "-DART_STACK_OVERFLOW_GAP_arm64=8912",
+        "-DART_STACK_OVERFLOW_GAP_mips=16384",
+        "-DART_STACK_OVERFLOW_GAP_mips64=16384",
+        "-DART_STACK_OVERFLOW_GAP_x86=16384",
+        "-DART_STACK_OVERFLOW_GAP_x86_64=20480",
+        "-DIMT_SIZE=43",
+    ],
+
+    cflags: ["-Wno-unused-parameter"],
+}
