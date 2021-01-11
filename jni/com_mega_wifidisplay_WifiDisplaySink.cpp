@@ -9,7 +9,7 @@
 #include <android_runtime/android_view_Surface.h>
 #include <VideoFormats.h>
 #include <sink/WifiDisplaySink.h>
-
+#include <stdlib.h>
 #include <JNIHelp.h>
 
 #include "com_mega_wifidisplay_WifiDisplaySink.h"
@@ -102,13 +102,7 @@ JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_stop
     looper->stop();
 }
 
-/*
- * Class:     com_mega_wifidisplay_WifiDisplaySink
- * Method:    stop
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_stop
-  (JNIEnv * env, jclass clazz) {
-    looper->stop();
-}
+JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_send
+  (JNIEnv * env, jclass clazz, jint type, jfloat x, jfloat y) {
+    sink->sendTouchEvent((int) type, (float) x, (float) y);
 }

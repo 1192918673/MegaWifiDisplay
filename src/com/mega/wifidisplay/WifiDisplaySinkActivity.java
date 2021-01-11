@@ -72,6 +72,7 @@ public class WifiDisplaySinkActivity extends Activity implements WfdConstants, S
     public boolean onTouchEvent(MotionEvent event) {
         Log.d(TAG, "onTouchEvent() action:" + event.getAction() + ", X:" + event.getX()
                 + ", Y:" + event.getY());
+        WifiDisplaySink.send(event.getAction(), event.getX(), event.getY());
         if (MotionEvent.ACTION_DOWN == event.getAction()) {
 
             showNavBar(!mShowingNavBar);

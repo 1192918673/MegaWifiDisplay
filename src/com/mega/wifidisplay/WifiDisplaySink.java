@@ -13,4 +13,6 @@ public class WifiDisplaySink {
     public static native void start();
 
     public static native void stop();
+
+    public static native void send(int type, float x, float y);
 }

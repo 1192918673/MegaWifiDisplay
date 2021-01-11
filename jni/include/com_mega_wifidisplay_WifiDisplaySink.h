@@ -47,6 +47,9 @@ JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_start
 JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_stop
   (JNIEnv *, jclass);
 
+JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_send
+  (JNIEnv *, jclass, jint, jfloat, jfloat);
+
 #ifdef __cplusplus
 }
 #endif
