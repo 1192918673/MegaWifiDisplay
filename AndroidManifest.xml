@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="26"
-        android:targetSdkVersion="28"/>
+        android:targetSdkVersion="27"/>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!--normal|instant-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!--normal-->
@@ -31,7 +31,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@android:style/Theme.Material.Light">
-        <activity android:name=".WifiP2pSettingsActivity">
+        <activity android:name=".WifiP2pSettingsActivity"
+            android:theme="@style/BackgroundStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

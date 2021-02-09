@@ -102,7 +102,7 @@ JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_stop
     looper->stop();
 }
 
-JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_send
+/*JNIEXPORT void JNICALL Java_com_mega_wifidisplay_WifiDisplaySink_send
   (JNIEnv * env, jclass clazz, jint type, jfloat x, jfloat y) {
     sink->sendTouchEvent((int) type, (float) x, (float) y);
-}
+}*/

@@ -8,4 +8,11 @@
         <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BackgroundStyle">
+        <!-- 背景色透明 -->
+        <item name="android:windowBackground">@drawable/setting_background</item>
+        <!-- 背景缓存色透明，避免拖动全黑 -->
+        <item name="android:colorBackgroundCacheHint">#00000000</item>
+    </style >
+
 </resources>

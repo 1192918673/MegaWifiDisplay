@@ -176,6 +176,7 @@ public class WifiP2pSettingsActivity extends PreferenceActivity {
             WifiP2pGroup group) {
         Log.d(TAG, "onDeviceConnected networkInfo=" + networkInfo + " wifiP2pInfo=" + wifiP2pInfo
                 + " group=" + group);
+        mWifiP2pManager.stopPeerDiscovery(mChannel, new MyActionListener("discover peers"));
         if (mRetryStartWfdSinkRunnable != null) {
             mHandler.removeCallbacks(mRetryStartWfdSinkRunnable);
         }
